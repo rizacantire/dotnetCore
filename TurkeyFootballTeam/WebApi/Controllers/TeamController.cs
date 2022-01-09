@@ -47,5 +47,38 @@ namespace WebApi.Controllers
                 return team;
             }
 
+            [HttpPost]
+            public IActionResult AddTeam([FromBody] Team newTeam){
+                var team = Teams.SingleOrDefault(t=>t.Name == newTeam.Name);
+                if(team is not null)
+                    return BadRequest();
+               
+                Teams.Add(newTeam)
+                return Ok();
+            }
+
+            [HttpPut("{id}")]
+            public IActionResult UpdateTeam(int id,[FromBody] Team updateBook){
+                var team = Teams.SingleOrDefault(t=>t.Id == id);
+                if(team is  null)
+                    return BadRequest();
+                 team.Id = updateTeam.Id != default ? updateTeam.Id : team.Id;
+                 team.Name = updateTeam.Name != default ? updateTeam.Name : team.Name;
+                 team.FoundedDate = updateTeam.FoundedDate != default ? updateTeam.FoundedDate : team.FoundedDate;
+                 team.City = updateTeam.City != default ? updateTeam.City : team.City;
+                 
+                return Ok();
+            }
+
+            [HttpDelete("{id}")]
+            public IActionResult DeleteTeam(int id)
+            {
+                var team = Teams.SingleOrDefault(t=>t.Id == id);
+                if(team is  null)
+                    return BadRequest();
+                teams.Remove(team);
+                return Ok();
+            }
+
         }
 }

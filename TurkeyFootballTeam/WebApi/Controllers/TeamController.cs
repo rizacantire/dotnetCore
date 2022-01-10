@@ -14,16 +14,16 @@ namespace WebApi.Controllers
         {   
             private static List<Team> Teams = new List<Team>(){
                 new Team{
-                    Id=1,Name = "Beşiktaş",City = "İstanbul",FoundedDate = new DateTime(1903,1,1)
+                    Id=1,Name = "Beşiktaş",City = "İstanbul",FoundedDate = 1903
                 },
                 new Team{
-                    Id=2,Name = "Galatasaray",City = "İstanbul",FoundedDate = new DateTime(1905,1,1)
+                    Id=2,Name = "Galatasaray",City = "İstanbul",FoundedDate = 1905
                 },
                 new Team{
-                    Id=3,Name = "Fenerbahçe",City = "İstanbul",FoundedDate = new DateTime(1907,1,1)
+                    Id=3,Name = "Fenerbahçe",City = "İstanbul",FoundedDate = 1907
                 },
                 new Team{
-                    Id=4,Name = "Trabzonspor",City = "Trabzon",FoundedDate = new DateTime(1961,1,1)
+                    Id=4,Name = "Trabzonspor",City = "Trabzon",FoundedDate = 1961
                 }
 
             };
@@ -53,12 +53,12 @@ namespace WebApi.Controllers
                 if(team is not null)
                     return BadRequest();
                
-                Teams.Add(newTeam)
+                Teams.Add(newTeam);
                 return Ok();
             }
 
             [HttpPut("{id}")]
-            public IActionResult UpdateTeam(int id,[FromBody] Team updateBook){
+            public IActionResult UpdateTeam(int id,[FromBody] Team updateTeam){
                 var team = Teams.SingleOrDefault(t=>t.Id == id);
                 if(team is  null)
                     return BadRequest();
@@ -76,7 +76,7 @@ namespace WebApi.Controllers
                 var team = Teams.SingleOrDefault(t=>t.Id == id);
                 if(team is  null)
                     return BadRequest();
-                teams.Remove(team);
+                Teams.Remove(team);
                 return Ok();
             }
 

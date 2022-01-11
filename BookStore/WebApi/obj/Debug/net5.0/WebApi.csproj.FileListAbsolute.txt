@@ -27,3 +27,8 @@ C:\Users\riza_tire\Desktop\patika\dotnetCore\BookStore\WebApi\obj\Debug\net5.0\W
 C:\Users\riza_tire\Desktop\patika\dotnetCore\BookStore\WebApi\obj\Debug\net5.0\ref\WebApi.dll
 C:\Users\riza_tire\Desktop\patika\dotnetCore\BookStore\WebApi\obj\Debug\net5.0\WebApi.pdb
 C:\Users\riza_tire\Desktop\patika\dotnetCore\BookStore\WebApi\obj\Debug\net5.0\WebApi.genruntimeconfig.cache
+C:\Users\riza_tire\Desktop\patika\dotnetCore\BookStore\WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\riza_tire\Desktop\patika\dotnetCore\BookStore\WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\riza_tire\Desktop\patika\dotnetCore\BookStore\WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\riza_tire\Desktop\patika\dotnetCore\BookStore\WebApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\riza_tire\Desktop\patika\dotnetCore\BookStore\WebApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll

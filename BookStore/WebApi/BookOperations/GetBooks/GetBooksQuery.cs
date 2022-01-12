@@ -1,15 +1,15 @@
+using WebApi.Common;
+using WebApi.Entities;
 using WebApi.DbOperations;
 using System.Linq;
-using WebApi.Common;
-using WebApi.DbOperations;
-using WebApi.Entities;
+using System.Collections.Generic;
 
 namespace WebApi.BookOperations.GetBooks
 {
     public class GetBooksQuery
     {
-        private readonly BookStroreDbContext _dbContext;
-        public GetBooksQuery(BookStroreDbContext dbContext)
+        private readonly BookStoreDbContext _dbContext;
+        public GetBooksQuery(BookStoreDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -28,6 +28,18 @@ namespace WebApi.BookOperations.GetBooks
                 });
             }
             return vm;
+        }
+
+        public BookViewModel HandleById(int bookId)
+        {
+            var book = _dbContext.Books.Find(bookId);
+            BookViewModel bvm = new BookViewModel(){
+                Title=book.Title,
+                Genre = ((GenreEnum)book.GenreId).ToString(),            
+                PageCount = book.PageCount,
+                PublishDate = book.PublishDate.Date.ToString("dd/MM/yyyy")
+                };
+            return bvm;
         }
     }
 
